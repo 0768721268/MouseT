@@ -8,6 +8,16 @@ import urllib.request
 import re
 import base64
 import datetime
+import discord
+from discord.ext import commands
+
+bot = commands.Bot(command_prefix="!")
+
+@bot.command()
+async def hinhanh(ctx):
+    embed = discord.Embed(title="Hình ảnh của bạn", description="Đây là hình ảnh từ link")
+    embed.set_image(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsfal3X3ntjpCmE82niQPCHo1lkyC_KzKfFg&s")  # Đường dẫn ảnh
+    await ctx.send(embed=embed)
 
 def install_import(modules):
     for module, pip_name in modules:
